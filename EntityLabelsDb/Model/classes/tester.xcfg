@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.rsantrod.entitylabelsdb.model.AppModule">
+      <AppModuleConfig name="14E6F9A3898" DeployPlatform="LOCAL" DBconnection="java:comp/env/jdbc/HRDS" BC4JConfigName="AppModuleLocal" JDBCName="HR" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" IsLazyLoadingTrue="true" ApplicationName="com.rsantrod.entitylabelsdb.model.AppModule" jbo.project="com.rsantrod.entitylabelsdb.model.Model">
+         <Database jbo.TypeMapEntries="OracleApps" jbo.locking.mode="optimistic" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="com.rsantrod.entitylabelsdb.model.AppModule"/>
+         <Tester testerLocales="en,fr,es" FullProxyInterfaceName="com.rsantrod.entitylabelsdb.model.common.AppModule"/>
+         <Custom ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" ns0:LastUsedConfiguration="AppModuleLocal" ns0:_testers_credentials_needed="false" ns0:JDBCDataSource="java:comp/env/jdbc/HRDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>
