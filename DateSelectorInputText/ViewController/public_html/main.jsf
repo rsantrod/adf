@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="main.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelLabelAndMessage label="Mi Componente" id="plam1">
+                <af:inputText label="Label 1" id="it1" simple="true" partialTriggers="id1"/>
+                <af:inputDate label="Label 1" id="id1" simple="true" styleClass="ocultarContenidoDate"
+                              autoSubmit="true" valueChangeListener="#{backingBeanScope.testBean.valueChangeDate}"/>
+            </af:panelLabelAndMessage>
+        </af:form>
+    </af:document>
+</f:view>
