@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.13.26"
+                id="employees_btf_employees_btf_CreateInsertPageDef" Package="taskFlows.employees"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="EmployeesView1" RangeSize="25" DataControl="HrAMDataControl" id="EmployeesView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="EmployeesView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

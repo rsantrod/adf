@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="employees-btf">
+    <default-activity>employees</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="editEmployees">
+      <page>/fragments/editEmployees.jsff</page>
+    </view>
+    <view id="employees">
+      <page>/fragments/employees.jsff</page>
+    </view>
+    <method-call id="emailDefaultValue">
+      <method>#{bindings.emailDefaultValue.execute}</method>
+      <outcome>
+        <fixed-outcome>emailDefaultValue</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome>
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__3">
+      <from-activity-id>editEmployees</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>employees</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__1">
+      <from-activity-id>employees</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>editar</from-outcome>
+        <to-activity-id>emailDefaultValue</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__7">
+        <from-outcome>create</from-outcome>
+        <to-activity-id>CreateInsert</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>emailDefaultValue</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>emailDefaultValue</from-outcome>
+        <to-activity-id>editEmployees</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>CreateInsert</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>CreateInsert</from-outcome>
+        <to-activity-id>editEmployees</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.10.8" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.avanttic.testfielddefaultvalue.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/fragments/employees.jsff" usageId="com_avanttic_testfielddefaultvalue_view_employeesPageDef"/>
+    <page path="/fragments/editEmployees.jsff" usageId="com_avanttic_testfielddefaultvalue_view_editEmployeesPageDef"/>
+    <page path="/pages/main.jsf" usageId="com_avanttic_testfielddefaultvalue_view_mainPageDef"/>
+    <page path="/WEB-INF/taskFlows/employees/employees-btf.xml#employees-btf@cargarValorHireDate"
+          usageId="com_avanttic_testfielddefaultvalue_view_employees_btf_employees_btf_cargarValorHireDatePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_avanttic_testfielddefaultvalue_view_employeesPageDef" path="fragments.employeesPageDef"/>
+    <page id="com_avanttic_testfielddefaultvalue_view_editEmployeesPageDef" path="fragments.editEmployeesPageDef"/>
+    <page id="com_avanttic_testfielddefaultvalue_view_mainPageDef" path="pages.mainPageDef"/>
+    <page id="com_avanttic_testfielddefaultvalue_view_employees_btf_employees_btf_cargarValorHireDatePageDef"
+          path="taskFlows.employees.employees_btf_employees_btf_cargarValorHireDatePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="HrAMDataControl" Package="com.avanttic.testfielddefaultvalue.model.bc.am"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="HrAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.avanttic.testfielddefaultvalue.model.bc.am.HrAM">
+      <AppModuleConfig name="HrAMLocal" jbo.project="com.avanttic.testfielddefaultvalue.model.Model" ApplicationName="com.avanttic.testfielddefaultvalue.model.bc.am.HrAM" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="com.avanttic.testfielddefaultvalue.model.bc.am.HrAM"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/hrDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="HrAMShared" jbo.project="com.avanttic.testfielddefaultvalue.model.Model" ApplicationName="com.avanttic.testfielddefaultvalue.model.bc.am.HrAM" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="com.avanttic.testfielddefaultvalue.model.bc.am.HrAM"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/hrDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

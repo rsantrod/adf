@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8"
+                id="employees_btf_employees_btf_cargarValorEnCommissionPctPageDef" Package="taskFlows.employees"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="EmployeesView1" RangeSize="25" DataControl="HrAMDataControl" id="EmployeesView1Iterator"/>
+    <variableIterator id="variables">
+      <variable Type="void" Name="cargarValorEnCommissionPct_return" IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.cargarValorEnCommissionPct.result}"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="cargarValorEnCommissionPct" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="cargarValorEnCommissionPct" IsViewObjectMethod="true" DataControl="HrAMDataControl"
+                  InstanceName="data.HrAMDataControl.EmployeesView1"
+                  ReturnName="data.HrAMDataControl.methodResults.cargarValorEnCommissionPct_HrAMDataControl_EmployeesView1_cargarValorEnCommissionPct_result"/>
+  </bindings>
+</pageDefinition>

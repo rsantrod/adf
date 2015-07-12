@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8"
+                id="employees_btf_employees_btf_cargarValorHireDatePageDef" Package="taskFlows.employees"
+                SkipValidation="true">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="cargarValorHireDate" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="cargarValorHireDate" IsViewObjectMethod="true" DataControl="HrAMDataControl"
+                  InstanceName="data.HrAMDataControl.EmployeesView1"
+                  ReturnName="data.HrAMDataControl.methodResults.cargarValorHireDate_HrAMDataControl_EmployeesView1_cargarValorHireDate_result"/>
+  </bindings>
+</pageDefinition>
