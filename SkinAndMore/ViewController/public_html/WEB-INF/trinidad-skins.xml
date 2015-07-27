@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+  <skin>
+    <id>skin1.desktop</id>
+    <family>skin1</family>
+    <extends>skyros-v1.desktop</extends>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>skins/skin1/skin1.css</style-sheet-name>
+    <bundle-name>com.rsantrod.skinandmore.view.skinBundle</bundle-name>
+  </skin>
+</skins>

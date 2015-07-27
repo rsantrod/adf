@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="main.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelHeader text="Jobs" id="ph1">
+                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                              value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                              model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                              queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                              queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                              resultComponentId="::resId1"/>
+                </af:panelHeader>
+                <af:table value="#{bindings.JobsView1.collectionModel}" var="row" rows="#{bindings.JobsView1.rangeSize}"
+                          emptyText="#{bindings.JobsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" selectedRowKeys="#{bindings.JobsView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.JobsView1.collectionModel.makeCurrent}" rowSelection="single"
+                          fetchSize="#{bindings.JobsView1.rangeSize}" id="resId1">
+                    <af:column headerText="#{bindings.JobsView1.hints.JobId.label}" id="resId1c1">
+                        <af:outputText value="#{row.JobId}" shortDesc="#{bindings.JobsView1.hints.JobId.tooltip}"
+                                       id="ot1"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.JobsView1.hints.JobTitle.label}" id="resId1c2">
+                        <af:outputText value="#{row.JobTitle}" shortDesc="#{bindings.JobsView1.hints.JobTitle.tooltip}"
+                                       id="ot2"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.JobsView1.hints.MinSalary.label}" id="resId1c3">
+                        <af:outputText value="#{row.MinSalary}"
+                                       shortDesc="#{bindings.JobsView1.hints.MinSalary.tooltip}" id="ot3">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.JobsView1.hints.MinSalary.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.JobsView1.hints.MaxSalary.label}" id="resId1c4">
+                        <af:outputText value="#{row.MaxSalary}"
+                                       shortDesc="#{bindings.JobsView1.hints.MaxSalary.tooltip}" id="ot4">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.JobsView1.hints.MaxSalary.format}"/>
+                        </af:outputText>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </af:form>
+    </af:document>
+</f:view>

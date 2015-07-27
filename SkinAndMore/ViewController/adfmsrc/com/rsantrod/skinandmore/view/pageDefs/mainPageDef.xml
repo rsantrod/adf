@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.13.26" id="mainPageDef"
+                Package="com.rsantrod.skinandmore.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="JobsView1" RangeSize="25" DataControl="AppModuleDataControl" id="JobsView1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="JobsView1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="JobsView1Iterator" id="JobsView1">
+      <nodeDefinition DefName="com.rsantrod.skinandmore.model.JobsView" Name="JobsView10">
+        <AttrNames>
+          <Item Value="JobId"/>
+          <Item Value="JobTitle"/>
+          <Item Value="MinSalary"/>
+          <Item Value="MaxSalary"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
