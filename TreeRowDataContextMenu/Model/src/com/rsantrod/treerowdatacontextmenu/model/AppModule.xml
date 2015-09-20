@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.1.3.13.26"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="EmployeesView1"
+    ViewObjectName="com.rsantrod.treerowdatacontextmenu.model.EmployeesView"/>
+  <ViewUsage
+    Name="EmployeesView2"
+    ViewObjectName="com.rsantrod.treerowdatacontextmenu.model.EmployeesView"/>
+  <ViewLinkUsage
+    Name="EmpManagerFkLink1"
+    ViewLinkObjectName="com.rsantrod.treerowdatacontextmenu.model.EmpManagerFkLink"
+    SrcViewUsageName="com.rsantrod.treerowdatacontextmenu.model.AppModule.EmployeesView1"
+    DstViewUsageName="com.rsantrod.treerowdatacontextmenu.model.AppModule.EmployeesView2"
+    Reversed="false"/>
+</AppModule>

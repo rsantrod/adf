@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="main.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:tree value="#{bindings.EmployeesView1.treeModel}" var="node"
+                     selectionListener="#{bindings.EmployeesView1.treeModel.makeCurrent}" rowSelection="single" id="t1">
+                <f:facet name="nodeStamp">
+                    <af:outputText value="#{node}" id="ot1"/>
+                </f:facet>
+                <f:facet name="contextMenu">
+                    <af:popup autoCancel="disabled" id="p1" contentDelivery="lazyUncached">
+                        <af:setPropertyListener type="popupFetch" from="#{node.FirstName}"
+                                                to="#{viewScope.treeFirstName}"/>
+                        <af:menu text="menu 1" id="m2">
+                            <af:commandMenuItem text="#{viewScope.treeFirstName}" id="cmi1"/>
+                        </af:menu>
+                    </af:popup>
+                </f:facet>
+            </af:tree>
+        </af:form>
+    </af:document>
+</f:view>
