@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+      
+        <af:commandButton text="Create" id="bCreate">
+          <af:showPopupBehavior popupId="p1" triggerType="action"/>
+        </af:commandButton>
+        <af:commandButton text="Edit" id="bEdit">
+          <af:showPopupBehavior popupId="p1" triggerType="action"/>
+        </af:commandButton>
+        
+        
+        <af:table value="#{bindings.DepartmentsView1.collectionModel}" var="row"
+                  rows="#{bindings.DepartmentsView1.rangeSize}"
+                  emptyText="#{bindings.DepartmentsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.DepartmentsView1.rangeSize}"
+                  rowBandingInterval="0"
+                  selectedRowKeys="#{bindings.DepartmentsView1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.DepartmentsView1.collectionModel.makeCurrent}"
+                  rowSelection="single" id="t1">
+          <af:column sortProperty="#{bindings.DepartmentsView1.hints.DepartmentId.name}"
+                     sortable="false"
+                     headerText="#{bindings.DepartmentsView1.hints.DepartmentId.label}"
+                     id="c3">
+            <af:outputText value="#{row.DepartmentId}" id="ot1">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.DepartmentsView1.hints.DepartmentId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.DepartmentsView1.hints.DepartmentName.name}"
+                     sortable="false"
+                     headerText="#{bindings.DepartmentsView1.hints.DepartmentName.label}"
+                     id="c4">
+            <af:outputText value="#{row.DepartmentName}" id="ot3"/>
+          </af:column>
+          <af:column sortProperty="#{bindings.DepartmentsView1.hints.ManagerId.name}"
+                     sortable="false"
+                     headerText="#{bindings.DepartmentsView1.hints.ManagerId.label}"
+                     id="c2">
+            <af:outputText value="#{row.ManagerId}" id="ot2">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.DepartmentsView1.hints.ManagerId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="#{bindings.DepartmentsView1.hints.LocationId.name}"
+                     sortable="false"
+                     headerText="#{bindings.DepartmentsView1.hints.LocationId.label}"
+                     id="c1">
+            <af:outputText value="#{row.LocationId}" id="ot4">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.DepartmentsView1.hints.LocationId.format}"/>
+            </af:outputText>
+          </af:column>
+        </af:table>
+        <af:popup id="p1"
+                  popupFetchListener="#{viewScope.testBean.popupFetchListener}"
+                  contentDelivery="lazyUncached">
+          <af:dialog id="d2">
+            <af:panelFormLayout id="pfl1">
+              <af:inputText value="#{bindings.DepartmentId.inputValue}"
+                            label="#{bindings.DepartmentId.hints.label}"
+                            required="#{bindings.DepartmentId.hints.mandatory}"
+                            columns="#{bindings.DepartmentId.hints.displayWidth}"
+                            maximumLength="#{bindings.DepartmentId.hints.precision}"
+                            shortDesc="#{bindings.DepartmentId.hints.tooltip}"
+                            id="it3">
+                <f:validator binding="#{bindings.DepartmentId.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.DepartmentId.format}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.DepartmentName.inputValue}"
+                            label="#{bindings.DepartmentName.hints.label}"
+                            required="#{bindings.DepartmentName.hints.mandatory}"
+                            columns="#{bindings.DepartmentName.hints.displayWidth}"
+                            maximumLength="#{bindings.DepartmentName.hints.precision}"
+                            shortDesc="#{bindings.DepartmentName.hints.tooltip}"
+                            id="it1">
+                <f:validator binding="#{bindings.DepartmentName.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.ManagerId.inputValue}"
+                            label="#{bindings.ManagerId.hints.label}"
+                            required="#{bindings.ManagerId.hints.mandatory}"
+                            columns="#{bindings.ManagerId.hints.displayWidth}"
+                            maximumLength="#{bindings.ManagerId.hints.precision}"
+                            shortDesc="#{bindings.ManagerId.hints.tooltip}"
+                            id="it4">
+                <f:validator binding="#{bindings.ManagerId.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.ManagerId.format}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.LocationId.inputValue}"
+                            label="#{bindings.LocationId.hints.label}"
+                            required="#{bindings.LocationId.hints.mandatory}"
+                            columns="#{bindings.LocationId.hints.displayWidth}"
+                            maximumLength="#{bindings.LocationId.hints.precision}"
+                            shortDesc="#{bindings.LocationId.hints.tooltip}"
+                            id="it2">
+                <f:validator binding="#{bindings.LocationId.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.LocationId.format}"/>
+              </af:inputText>
+            </af:panelFormLayout>
+          </af:dialog>
+        </af:popup>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
